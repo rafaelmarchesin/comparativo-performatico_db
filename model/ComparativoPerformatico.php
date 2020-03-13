@@ -43,9 +43,3 @@ class ComparativoPerformatico
         echo "\n--------------------\n\n";
     }
 }
-
-$teste = new ComparativoPerformatico;
-
-//$teste->guardaTempo('mysql', '10');
-
-$teste->leTempo();
