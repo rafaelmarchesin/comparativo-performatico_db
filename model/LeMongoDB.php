@@ -4,12 +4,14 @@
 
 require_once __DIR__ . '/ConectaDB.php';
 require_once __DIR__ . '/TempoInstante.php';
+require_once __DIR__ . '/ComparativoPerformatico.php';
 
 class LeMongoDB
 {
     private $mongodb;
     private $conn;
     private $pega_tempo;
+    private $performance;
 
     public function conecta()
     {
@@ -21,6 +23,7 @@ class LeMongoDB
     {
         $this->conecta();
         $this->pega_tempo = new TempoInstante;
+        $this->performance = new ComparativoPerformatico;
 
             $tempo_inicial = $this->pega_tempo->pegaTempoAgora();
             for ( $i = 1; $i <= 1000; $i++ )
@@ -32,6 +35,9 @@ class LeMongoDB
             $tempo_final = $this->pega_tempo->pegaTempoAgora();
 
         //exibe o tempo total do processo
-        $this->pega_tempo->tempoResultante($tempo_inicial, $tempo_final);
+        $result = $this->pega_tempo->tempoResultante($tempo_inicial, $tempo_final);
+
+        //guarda o tempo no banco de dados
+        $this->performance->guardaTempo('Leitura Mongo', $result);
     }
 }

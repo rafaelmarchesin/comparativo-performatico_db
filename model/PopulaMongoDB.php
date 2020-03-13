@@ -4,16 +4,19 @@
 
 require __DIR__ . '/ConectaDB.php';
 require_once __DIR__ . '/TempoInstante.php';
+require_once __DIR__ . '/ComparativoPerformatico.php';
 
 class PopulaMongoDB
 {
     private $mongo;
     private $conn;
     private $pega_tempo;
+    private $performance;
 
     public function conecta()
     {
         $this->mongo = new ConectaDB;
+        $this->performance = new ComparativoPerformatico;
         $this->conn = $this->mongo->conectaMongoDB();
     }
     
@@ -32,6 +35,9 @@ class PopulaMongoDB
             $tempo_final = $this->pega_tempo->pegaTempoAgora();
 
         //exibe o tempo total do processo
-        $this->pega_tempo->tempoResultante($tempo_inicial, $tempo_final);
+        $result = $this->pega_tempo->tempoResultante($tempo_inicial, $tempo_final);
+
+        //guarda o tempo no banco de dados
+        $this->performance->guardaTempo('Grava Mongo', $result);
     }
 }

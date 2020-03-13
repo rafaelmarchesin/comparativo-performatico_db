@@ -1,0 +1,5 @@
+CREATE TABLE quarda_tempo (
+id INT(6) not null AUTO_INCREMENT PRIMARY KEY,
+banco_dados VARCHAR(100) NOT NULL,
+tempo FLOAT NOT NULL
+);

@@ -17,5 +17,6 @@ class TempoInstante
         echo "\nTempo de processamento:\n";
         echo number_format($result, 3);
         echo " sec\n\n";
+        return $result;
     }
 }

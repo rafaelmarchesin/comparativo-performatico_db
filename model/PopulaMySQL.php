@@ -4,6 +4,7 @@
 
 require_once __DIR__ . '/ConectaDB.php';
 require_once __DIR__ . '/TempoInstante.php';
+require_once __DIR__ . '/ComparativoPerformatico.php';
 
 class PopulaMySQL
 {
@@ -11,11 +12,13 @@ class PopulaMySQL
     private $mysql;
     private $conn;
     private $pega_tempo;
+    private $performance;
 
     /* Método responsável por instanciar a conexão com o Banco de Dados */
     public function conecta()
     {
         $this->mysql = new ConectaDB;
+        $this->performance = new ComparativoPerformatico;
         $this->conn = $this->mysql->conectaMySQL();
     }
 
@@ -34,7 +37,10 @@ class PopulaMySQL
             $tempo_final = $this->pega_tempo->pegaTempoAgora();
 
         //exibe o tempo total do processo
-        $this->pega_tempo->tempoResultante($tempo_inicial, $tempo_final);
+        $result = $this->pega_tempo->tempoResultante($tempo_inicial, $tempo_final);
+
+        //guarda o tempo no banco de dados
+        $this->performance->guardaTempo('Grava MySQL', $result);
         
     }
 }
