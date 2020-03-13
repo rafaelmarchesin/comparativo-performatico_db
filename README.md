@@ -29,26 +29,34 @@ Para ter acesso às funcionalidades da aplicação, basta executar o clone do re
 
 Comando usado para clonar o repositório:
 
+```
 ... $ git clone https://github.com/rafaelmarchesin/comparativo-performatico_db.git
+```
 
 A aplicação é executada via Docker e Docker Compose, por isso, é necessário ter ambas aplicações instaladas no computador.
 Após instalá-las, basta executar o seguinte comando na pasta onde o repositório foi clonado:
 
+```
 ... $ docker-compose up --build
+```
 
 Esse comando é responsável por inicializar e configurar os containers responsáveis pelo funcionamento da aplicação.
 Para encerrar a execussão da aplicação via Docker Compose, basta digitar no terminal o seguinte comando:
 
+```
 ... $ docker-compose down
+```
 
 ### Rodando a aplicação:
 Para rodar a aplicação, é necessário acessar a mesma pasta em que se encontra os documentos clonados em outra aba do terminal (caso o Docker Compose não tenha sido executado em modo daemon, o que é o caso, se você seguiu os comando apresentados acima) e executar o seguinte comando:
 
+```
 ... $ php index.php
+```
 
 Feito isso, a tela inicial da aplicação será carregada como demonstrado na imagem abaixo:
 
-![IMAGEM 001]()
+![Tela exibindo o menu](https://raw.githubusercontent.com/rafaelmarchesin/comparativo-performatico_db/master/imagens/001.png)
 
 ### Inserindo dados nos Bancos de Dados:
 Para inserir dados nos Bancos de Dados, basta digitar o número correspondete à ação indicado no menu e pressionar "Enter".
@@ -64,7 +72,7 @@ Dígito "4": Lê dados armazenados no Banco de Dados MongoDB.
 Cada ação solicitada para a aplicação retornará um valor em segundos indicando o tempo que levou para o processamento ser executado. Após executar todas as ações, é possível exibir os resultados performáticos digitando o número "5".
 Os valores de tempo serão exibidos como na tela abaixo:
 
-![IMAGEM 002]()
+![Tela que exibe o resultado performático](https://raw.githubusercontent.com/rafaelmarchesin/comparativo-performatico_db/master/imagens/002.png)
 
 ### Exibindo novamente o menu:
 Em determinado momento da execussão da aplicação, pode ser necessário visualizar novamente o menu, para isso, bastas digitar o número "6" e pressionar "Enter" que o menu será exibido na tela.
