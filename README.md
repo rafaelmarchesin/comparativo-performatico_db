@@ -30,28 +30,28 @@ Para ter acesso às funcionalidades da aplicação, basta executar o clone do re
 Comando usado para clonar o repositório:
 
 ```
-... $ git clone https://github.com/rafaelmarchesin/comparativo-performatico_db.git
+$ git clone https://github.com/rafaelmarchesin/comparativo-performatico_db.git
 ```
 
 A aplicação é executada via Docker e Docker Compose, por isso, é necessário ter ambas aplicações instaladas no computador.
 Após instalá-las, basta executar o seguinte comando na pasta onde o repositório foi clonado:
 
 ```
-... $ docker-compose up --build
+$ docker-compose up --build
 ```
 
 Esse comando é responsável por inicializar e configurar os containers responsáveis pelo funcionamento da aplicação.
 Para encerrar a execussão da aplicação via Docker Compose, basta digitar no terminal o seguinte comando:
 
 ```
-... $ docker-compose down
+$ docker-compose down
 ```
 
 ### Rodando a aplicação:
 Para rodar a aplicação, é necessário acessar a mesma pasta em que se encontra os documentos clonados em outra aba do terminal (caso o Docker Compose não tenha sido executado em modo daemon, o que é o caso, se você seguiu os comando apresentados acima) e executar o seguinte comando:
 
 ```
-... $ php index.php
+$ php index.php
 ```
 
 Feito isso, a tela inicial da aplicação será carregada como demonstrado na imagem abaixo:
