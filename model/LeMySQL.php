@@ -29,8 +29,8 @@ class LeMySQL
             $tempo_inicial = $this->pega_tempo->pegaTempoAgora();
             for ( $i = 1; $i <= 1000; $i++ )
             {
-                $soma = $i + 5438;
-                $this->resultado = $this->conn->query("SELECT * FROM tabela_teste WHERE id={$soma};");
+                //$soma = $i + 5438;
+                $this->resultado = $this->conn->query("SELECT * FROM tabela_teste WHERE id={$i};");
                 $this->linha = mysqli_fetch_assoc($this->resultado);
 
                 if ($this->linha['nome'] != null)

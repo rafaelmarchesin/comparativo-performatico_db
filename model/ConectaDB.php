@@ -7,7 +7,7 @@ class ConectaDB
 
     public function conectaMySQL()
     {
-        $this->mysql = new mysqli("localhost", "root", "root", "test_db", "9906");
+        $this->mysql = new mysqli("localhost:9906.", "root", "root", "test_db");
         return $this->mysql;
     }
 
