@@ -11,10 +11,11 @@ class ConectaDB
         return $this->mysql;
     }
 
-    //public function conectaMongoDB()
-    //{
-    //    $this->mongo = new MongoClient();
-    //    $this->mongo->selectDB('rafael');
-    //    return $this->mongo;
-    //}
+    public function conectaMongoDB()
+    {
+        $this->mongo = new MongoClient("mongodb://root:root@localhost:27017/?authSource=admin");
+        $this->mongo = $this->mongo->test_db;
+        //var_dump($this->mongo); die;
+        return $this->mongo;
+    }
 }
