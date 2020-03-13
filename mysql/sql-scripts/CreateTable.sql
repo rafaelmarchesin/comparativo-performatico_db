@@ -1,0 +1,4 @@
+CREATE TABLE tabela_teste (
+id INT(6) not null AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR(100) NOT NULL
+);
