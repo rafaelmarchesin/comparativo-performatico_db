@@ -10,7 +10,8 @@ class Menu
         echo "3 - Ler dados do BD MySQl\n";
         echo "4 - Ler dados do BD MongoDB\n";
         echo "5 - Comparativo performático\n";
-        echo "6 - Sair\n";
+        echo "6 - Menu\n";
+        echo "7 - Sair\n";
         echo "============== MENU ==============\n";
         echo "\n";
     }
